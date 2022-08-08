@@ -1,0 +1,40 @@
+﻿<Window x:Class="SimpleImageCapturer.MainWindow"
+        x:ClassModifier="internal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="SimpleScreenCapturer" 
+        Height="260" Width="360"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        Closed="MainWindow_OnClosed"
+        Background="Gainsboro"
+        Icon="Images/img.Capture.png">
+    <!-- Body -->
+    <Grid Margin="20" >
+
+        <!-- Set of Controls -->
+        <StackPanel>
+            <TextBlock Text="Process Name"/>
+            <TextBox x:Name="textBoxProcessName" />
+            <TextBlock x:Name="TextBlockProcessDetails" Text=""/>
+            <TextBlock Text="Destination Directory"/>
+            <TextBox x:Name="textBoxDestinationDirectory" />
+            <Button Margin="5" Width="120" Content="Open" Click="ButtonOpen_OnClick"/>
+            <TextBlock Text="Capture Interval (sec)"/>
+            <TextBox x:Name="textBoxCaptureInterval" Text="3"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="buttonStart" Margin="5" Width="120" Content="Start" Click="ButtonStart_OnClick"/>
+                <Button x:Name="buttonStop" Margin="5" Width="120" Content="Stop" Click="ButtonStop_OnClick" IsEnabled="False"/>
+            </StackPanel>
+        </StackPanel>
+        <!-- End of Set of Controls -->
+
+        <!-- Image capturing indicator -->
+        <Ellipse x:Name="recordIndicator" Margin="0,0,-10,-10" Fill="OrangeRed" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Visibility="Hidden"/>
+
+    </Grid>
+    <!-- End of Body -->
+</Window>
